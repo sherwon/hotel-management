@@ -4,8 +4,10 @@ import com.sherwin.dev.hotelmanagement.dto.AuthenticationRequest;
 import com.sherwin.dev.hotelmanagement.dto.AuthenticationResponse;
 import com.sherwin.dev.hotelmanagement.dto.RegisterRequest;
 import com.sherwin.dev.hotelmanagement.service.AuthService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +21,7 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
-            @RequestBody RegisterRequest registerRequest
+            @RequestBody @Valid RegisterRequest registerRequest
     ) {
         AuthenticationResponse authResponse = authService.register(registerRequest);
         return  ResponseEntity.ok(authResponse);
