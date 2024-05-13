@@ -12,10 +12,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterRequest {
-    @NonNull
-    @NotBlank(message = "Name should not be empty")
-    @Pattern(regexp = "^[a-zA-Z ]*$", message = "Name should not contain special characters or numbers")
-    @Size(min = 3, max = 30)
+//    @NonNull
+//    @NotBlank(message = "Name should not be empty")
+//    @Pattern(regexp = "^[a-zA-Z ]*$", message = "Name should not contain special characters or numbers")
+//    @Size(min = 3, max = 30)
     private String firstName;
     private String lastName;
     @Email
